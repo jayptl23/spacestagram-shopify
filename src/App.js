@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import Card from './components/Card'
 
-const url = `https://api.nasa.gov/planetary/apod?count=3&api_key=${process.env.REACT_APP_API_KEY}`
+const url = `https://api.nasa.gov/planetary/apod?count=10&api_key=${process.env.REACT_APP_API_KEY}`
 
 async function getImages() {
 	try {
@@ -15,13 +15,13 @@ async function getImages() {
 }
 
 const App = () => {
+	const [images, setImages] = useState([])
+
 	useEffect(() => {
 		getImages().then(images => setImages(images))
 	}, [])
 
-	const [images, setImages] = useState([])
-
-	return <div className='App'>{images && images.map(img => <Card />)}</div>
+	return <div className='App'>{images && images.map(image => <Card key={image.title} image={image} />)}</div>
 }
 
 export default App
