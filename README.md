@@ -14,4 +14,4 @@ Check out a [live demo](https://jayptl23.github.io/spacestagram-shopify/)
 - Used NASA's Astronomy Picture of the Day API to fetch images
 - Add ability to like images (animation included)
 - Created a loading state 
-- Full responsive across desktop, tablet, and mobile devices
+- Fully responsive across desktop, tablet, and mobile devices
