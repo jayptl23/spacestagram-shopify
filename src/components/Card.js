@@ -5,12 +5,12 @@ import {HeartIcon as SolidHeartIcon} from '@heroicons/react/solid'
 const Card = ({image}) => {
 	const [isLiked, setIsLiked] = useState(false)
 
-	const handleLike = e => setIsLiked(prevState => !prevState)
+	const handleLike = () => setIsLiked(prevState => !prevState)
 
-	const {title, url, hdurl, date, explanation} = image
+	const {title, url, media_type, date, explanation} = image
 	return (
-		<article className='bg-gray-200 drop-shadow-md rounded-lg'>
-			<img className='mb-1 rounded-t-sm h-64 w-full object-cover' src={url || hdurl} alt={title} />
+		<article className='bg-white drop-shadow-md rounded-lg'>
+			<img className='mb-1 rounded-t-sm h-64 w-full object-cover' src={media_type === 'image' ? url : image.thumbnail_url} alt={title} />
 			<div className='p-2'>
 				<div className='flex justify-between items-center px-2 mb-2'>
 					<div>
